@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BrightPack icon">
+  <rect width="64" height="64" rx="18" fill="#f1e4d1" />
+  <path d="M18 18h17c8.2 0 14 4.6 14 11.8 0 5.3-3.1 8.9-7.8 10.4L48 46H36.3l-5.8-4.9H28V46H18V18Zm10 15.8h6.5c2.7 0 4.5-1.4 4.5-3.8 0-2.3-1.8-3.7-4.5-3.7H28v7.5Z" fill="#54322a" />
+  <circle cx="49" cy="16" r="7" fill="#df7b54" />
+</svg>
