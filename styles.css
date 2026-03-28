@@ -467,36 +467,6 @@ summary {
   background: color-mix(in oklch, var(--accent-soft) 88%, white);
 }
 
-.flow-grid,
-.flow-label,
-.flow-card,
-.flow-card::after,
-.flow-card::before,
-.flow-card-result {
-  display: none;
-}
-
-.ticker {
-  overflow: hidden;
-  padding: 0.9rem 0;
-  border-block: 1px solid var(--line);
-}
-
-.ticker-track {
-  display: flex;
-  gap: 2rem;
-  width: max-content;
-  animation: ticker 26s linear infinite;
-}
-
-.ticker-track span {
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: clamp(1.2rem, 2vw, 1.55rem);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: color-mix(in oklch, var(--ink) 80%, var(--accent-deep));
-}
-
 .section {
   padding: clamp(3.2rem, 7vw, 6rem) 0 0;
 }
@@ -510,90 +480,12 @@ summary {
   max-width: 36rem;
 }
 
-.benefit-grid,
-.flow-grid,
 .tools-layout,
 .packs-grid,
-.steps-grid,
-.inside-layout {
+.steps-grid {
   margin-top: 2rem;
 }
 
-.flow-grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.flow-card {
-  position: relative;
-  min-height: 100%;
-  padding: clamp(1.25rem, 2vw, 1.8rem);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  background:
-    linear-gradient(150deg, color-mix(in oklch, var(--paper) 82%, white), color-mix(in oklch, white 78%, var(--accent-soft)));
-}
-
-.flow-card::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -0.85rem;
-  width: 1.7rem;
-  height: 2px;
-  background: color-mix(in oklch, var(--accent) 55%, var(--line));
-  transform: translateY(-50%);
-}
-
-.flow-card::before {
-  content: "";
-  position: absolute;
-  top: calc(50% - 0.32rem);
-  right: -0.82rem;
-  width: 0.6rem;
-  height: 0.6rem;
-  border-top: 2px solid color-mix(in oklch, var(--accent) 55%, var(--line));
-  border-right: 2px solid color-mix(in oklch, var(--accent) 55%, var(--line));
-  transform: rotate(45deg);
-}
-
-.flow-card:last-child::after,
-.flow-card:last-child::before {
-  display: none;
-}
-
-.flow-card-result {
-  background:
-    radial-gradient(circle at top right, color-mix(in oklch, var(--leaf) 20%, transparent), transparent 38%),
-    linear-gradient(150deg, color-mix(in oklch, var(--accent-soft) 76%, white), color-mix(in oklch, var(--paper) 84%, white));
-}
-
-.flow-label {
-  margin: 0 0 0.8rem;
-  color: var(--accent-deep);
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.flow-card h3 {
-  font-size: clamp(1.2rem, 1.7vw, 1.6rem);
-}
-
-.flow-card p:last-child {
-  margin-bottom: 0;
-  color: var(--ink-soft);
-}
-
-.benefit-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr 0.9fr;
-  gap: 1rem;
-}
-
-.benefit,
 .pack,
 .step,
 .inside-callout,
@@ -605,18 +497,12 @@ summary {
   background: color-mix(in oklch, var(--paper) 80%, white);
 }
 
-.benefit,
 .pack,
 .step,
 .inside-callout,
 .tutorial-card,
 .cta-panel {
   padding: clamp(1.35rem, 2.2vw, 2rem);
-}
-
-.benefit-accent {
-  background:
-    linear-gradient(145deg, color-mix(in oklch, var(--accent-soft) 85%, white), color-mix(in oklch, var(--paper) 86%, white));
 }
 
 .tools-layout {
@@ -713,22 +599,19 @@ summary {
   font-weight: 800;
 }
 
-.pack ul,
-.inside-list {
+.pack ul {
   margin: 1rem 0 1.4rem;
   padding: 0;
   list-style: none;
 }
 
-.pack li,
-.inside-list li {
+.pack li {
   position: relative;
   padding-left: 1.45rem;
   margin-top: 0.75rem;
 }
 
-.pack li::before,
-.inside-list li::before {
+.pack li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -811,20 +694,6 @@ summary {
   color: var(--ink);
 }
 
-.inside-layout {
-  display: grid;
-  grid-template-columns: 1.2fr 0.9fr;
-  gap: 1rem;
-}
-
-.inside-list {
-  margin-top: 0;
-  padding: clamp(1.35rem, 2vw, 2rem);
-  border-radius: var(--radius-lg);
-  background: color-mix(in oklch, white 65%, transparent);
-  border: 1px solid var(--line);
-}
-
 .inside-callout {
   background:
     radial-gradient(circle at top right, color-mix(in oklch, var(--leaf) 24%, transparent), transparent 46%),
@@ -896,15 +765,6 @@ summary:focus-visible {
   outline-offset: 4px;
 }
 
-@keyframes ticker {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 @keyframes core-pulse {
   0%,
   100% {
@@ -946,11 +806,9 @@ summary:focus-visible {
 
 @media (max-width: 920px) {
   .hero,
-  .benefit-grid,
   .tools-layout,
   .packs-grid,
   .steps-grid,
-  .inside-layout,
   .tutorial-screen {
     grid-template-columns: 1fr;
   }
