@@ -409,11 +409,80 @@ summary {
 }
 
 .benefit-grid,
+.flow-grid,
 .tools-layout,
 .packs-grid,
 .steps-grid,
 .inside-layout {
   margin-top: 2rem;
+}
+
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.flow-card {
+  position: relative;
+  min-height: 100%;
+  padding: clamp(1.25rem, 2vw, 1.8rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(150deg, color-mix(in oklch, var(--paper) 82%, white), color-mix(in oklch, white 78%, var(--accent-soft)));
+}
+
+.flow-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -0.85rem;
+  width: 1.7rem;
+  height: 2px;
+  background: color-mix(in oklch, var(--accent) 55%, var(--line));
+  transform: translateY(-50%);
+}
+
+.flow-card::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 0.32rem);
+  right: -0.82rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-top: 2px solid color-mix(in oklch, var(--accent) 55%, var(--line));
+  border-right: 2px solid color-mix(in oklch, var(--accent) 55%, var(--line));
+  transform: rotate(45deg);
+}
+
+.flow-card:last-child::after,
+.flow-card:last-child::before {
+  display: none;
+}
+
+.flow-card-result {
+  background:
+    radial-gradient(circle at top right, color-mix(in oklch, var(--leaf) 20%, transparent), transparent 38%),
+    linear-gradient(150deg, color-mix(in oklch, var(--accent-soft) 76%, white), color-mix(in oklch, var(--paper) 84%, white));
+}
+
+.flow-label {
+  margin: 0 0 0.8rem;
+  color: var(--accent-deep);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.flow-card h3 {
+  font-size: clamp(1.2rem, 1.7vw, 1.6rem);
+}
+
+.flow-card p:last-child {
+  margin-bottom: 0;
+  color: var(--ink-soft);
 }
 
 .benefit-grid {
@@ -767,12 +836,31 @@ summary:focus-visible {
 @media (max-width: 920px) {
   .hero,
   .benefit-grid,
+  .flow-grid,
   .tools-layout,
   .packs-grid,
   .steps-grid,
   .inside-layout,
   .tutorial-screen {
     grid-template-columns: 1fr;
+  }
+
+  .flow-card::after {
+    top: auto;
+    bottom: -0.85rem;
+    left: 50%;
+    right: auto;
+    width: 2px;
+    height: 1.7rem;
+    transform: translateX(-50%);
+  }
+
+  .flow-card::before {
+    top: auto;
+    bottom: -0.78rem;
+    left: calc(50% - 0.32rem);
+    right: auto;
+    transform: rotate(135deg);
   }
 
   .hero-stage {
